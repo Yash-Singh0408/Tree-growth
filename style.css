@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #dcecf5;
+
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+#treePage {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+
+            #9fd5ed 0%,
+
+            #c8e5f1 45%,
+
+            #e6eee4 75%,
+
+            #d8e4c9 100%
+        );
+
+}
+
+
+/* =========================================
+   TREE SCENE
+========================================= */
+
+.tree-scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================
+   TREE WRAPPER
+========================================= */
+
+.tree-wrapper {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    bottom: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+}
+
+
+/* =========================================
+   TREE IMAGES
+========================================= */
+
+.tree {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+
+    /*
+        IMPORTANT
+
+        All 8 images occupy EXACTLY
+        the same position.
+    */
+
+    width: min(80vw, 950px);
+
+    max-height: 92vh;
+
+
+    object-fit: contain;
+
+    object-position: bottom center;
+
+
+    transform:
+
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+
+    opacity: 0;
+
+
+    /*
+        JavaScript controls everything.
+    */
+
+    will-change:
+
+        transform,
+        opacity;
+
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+.scroll-line {
+
+    width: 1px;
+
+    height: 35px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .tree {
+
+        width: 110vw;
+
+        max-height: 88vh;
+
+    }
+
+}
